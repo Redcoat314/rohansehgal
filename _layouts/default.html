@@ -36,7 +36,7 @@
 
   <!-- Menu Navigation
 ================================================== -->
-  <div class="navigation-wrap start-header start-style">
+  <div class="navigation-wrap start-header start-style" id="header">
     <nav class="header-wrap">
       <div class="header-items-wrap">
         <div class="header-sections">
@@ -107,7 +107,7 @@
           </svg>
         </button> -->
 
-        <div class="header-sections">
+        <div class="header-sections" id="menu">
           <ul class="menu-items font-weight-bold d-flex align-items-center">
             
             <li class="nav-item">
@@ -173,7 +173,25 @@
   <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
   <script src="{{ site.baseurl }}/assets/js/bootstrap.min.js"></script>
   <script src="{{ site.baseurl }}/assets/js/theme.js"></script>
+  <script>
+    let lastScrollTop = 0;
+    const header = document.getElementById('header');
+    const menu = document.getElementById('menu');
+    window.addEventListener('scroll', function() {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
+      if (scrollTop > lastScrollTop) {
+        // Downscroll
+        menu.style.top = '-60px';
+        header.style.top = '-60px'; // Adjust according to the header height
+      } else {
+        // Upscroll
+        menu.style.top = '0';
+        header.style.top = '0';
+      }
+      lastScrollTop = scrollTop;
+    });
+  </script>
 </body>
 
 </html>
