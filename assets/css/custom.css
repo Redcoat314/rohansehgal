@@ -266,8 +266,6 @@ blockquote {
         
     }
     .header-sections{
-        
-        
         width: 100%;
     }
     .menu-items{
@@ -305,7 +303,17 @@ blockquote {
     .social-icons{
         align-items: center;
         justify-content: center;
+        margin-top: -30px;
+            align-items: center;
     }
+    .small-icons .social-icon svg {
+            width: 15px;
+            height: 15px;
+          }
+          
+          .small-icons .social-icon {
+            margin: 0 5px; /* Adjust spacing as needed */
+          }
     .header-sections{
     display: flex;
         justify-content: center;
@@ -346,7 +354,7 @@ blockquote {
         
     }
     .rohan-img{
-        margin-top: 25px;
+        margin-top: -25px;
         flex-grow: 2;
     }
 
